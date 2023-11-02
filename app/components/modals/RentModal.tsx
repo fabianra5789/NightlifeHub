@@ -57,9 +57,6 @@ const RentModal = () => {
 
   const location = watch("location");
   const category = watch("category");
-  const guestCount = watch("guestCount");
-  const roomCount = watch("roomCount");
-  const bathroomCount = watch("bathroomCount");
   const imageSrc = watch("imageSrc");
 
   const Map = useMemo(
@@ -129,8 +126,8 @@ const RentModal = () => {
   let bodyContent = (
     <div className="flex flex-col gap-8">
       <Heading
-        title="Which of these best describes your place?"
-        subtitle="Pick a category"
+        title="Como describirias tu discoteca?"
+        subtitle="selecciona una categoria"
       />
       <div
         className="
@@ -160,8 +157,8 @@ const RentModal = () => {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
-          title="Where is your place located?"
-          subtitle="Help guests find you!"
+          title="Donde esta ubicada?"
+          subtitle="Ayudanos a encontrarte!"
         />
         <CountrySelect
           value={location}
@@ -172,43 +169,12 @@ const RentModal = () => {
     );
   }
 
-  if (step === STEPS.INFO) {
-    bodyContent = (
-      <div className="flex flex-col gap-8">
-        <Heading
-          title="Share some basics about your place"
-          subtitle="What amenitis do you have?"
-        />
-        <Counter
-          onChange={(value) => setCustomValue("guestCount", value)}
-          value={guestCount}
-          title="Guests"
-          subtitle="How many guests do you allow?"
-        />
-        <hr />
-        <Counter
-          onChange={(value) => setCustomValue("roomCount", value)}
-          value={roomCount}
-          title="Rooms"
-          subtitle="How many rooms do you have?"
-        />
-        <hr />
-        <Counter
-          onChange={(value) => setCustomValue("bathroomCount", value)}
-          value={bathroomCount}
-          title="Bathrooms"
-          subtitle="How many bathrooms do you have?"
-        />
-      </div>
-    );
-  }
-
   if (step === STEPS.IMAGES) {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
-          title="Add a photo of your place"
-          subtitle="Show guests what your place looks like!"
+          title="Agrega una foto de la discoteca"
+          subtitle="Muestranos como se ve tu discoteca!"
         />
         <ImageUpload
           onChange={(value) => setCustomValue("imageSrc", value)}
@@ -222,12 +188,12 @@ const RentModal = () => {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
-          title="How would you describe your place?"
-          subtitle="Short and sweet works best!"
+          title="Como nos describirias tu discoteca?"
+          subtitle="algo corto pero directo!"
         />
         <Input
           id="title"
-          label="Title"
+          label="Nombre"
           disabled={isLoading}
           register={register}
           errors={errors}
@@ -236,7 +202,7 @@ const RentModal = () => {
         <hr />
         <Input
           id="description"
-          label="Description"
+          label="Descripcion"
           disabled={isLoading}
           register={register}
           errors={errors}
@@ -250,8 +216,8 @@ const RentModal = () => {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
-          title="Now, set your price"
-          subtitle="How much do you charge per night?"
+          title="Cuanto vale la reservacion o el cover?"
+          subtitle="Indica el precio"
         />
         <Input
           id="price"
@@ -271,7 +237,7 @@ const RentModal = () => {
     <Modal
       disabled={isLoading}
       isOpen={rentModal.isOpen}
-      title="Airbnb your home!"
+      title="Tabogo live tu casa!"
       actionLabel={actionLabel}
       onSubmit={handleSubmit(onSubmit)}
       secondaryActionLabel={secondaryActionLabel}
