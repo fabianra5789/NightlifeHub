@@ -1,4 +1,4 @@
-# Full Stack NightlifeHub with Next.js 13: React, Tailwind, Prisma, MongoDB, NextAuth 2023
+# Full Stack NightlifeHub with Next.js 13: React, Tailwind, Prisma, MongoDB, NextAuth 
 
 ### Prerequisites
 
